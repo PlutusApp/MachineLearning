@@ -24,13 +24,13 @@ def product_rating():
         price = 10000;
         tar = targets[rand];"""
 
-        MI = 500
-        ME = 350
+        MI = 1500
+        ME = 100
         TI = 12000
         RCS = 0.1
         Age = 19
         TA = 8000
-        price = 110
+        price = 200
         tar = 1
 
         print("mi is %f" % MI);
