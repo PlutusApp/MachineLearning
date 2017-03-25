@@ -9,8 +9,8 @@ def poor_big_spender():
     rcs = -0.6
     for i in range(1,12):
         poor_status = random.uniform(0, 0.5)
-        saving_rate = random.uniform(0,3)
-        spending_rate = random.uniform(7,10)
+        saving_rate = random.uniform(3,6)
+        spending_rate = random.uniform(6,9)
         monthly_expenditure = monthly_income/saving_rate
         account_total = total_income*(1.0-poor_status)
         rcs = (monthly_income-monthly_expenditure)/monthly_income
@@ -27,8 +27,8 @@ def saver_big_spender():
     rcs = -0.6
     for i in range(1,12):
         poor_status = random.uniform(0, 1)
-        saving_rate = random.uniform(7,10)
-        spending_rate = random.uniform(7,10)
+        saving_rate = random.uniform(6,9)
+        spending_rate = random.uniform(6,9)
         monthly_expenditure = monthly_income/saving_rate
         account_total = total_income*(1.0-poor_status)
         rcs = (monthly_income-monthly_expenditure)/monthly_income
@@ -45,8 +45,8 @@ def saver_small_spender():
     rcs = -0.6
     for i in range(1,12):
         poor_status = random.uniform(0, 1)
-        saving_rate = random.uniform(7,10)
-        spending_rate = random.uniform(0,3)
+        saving_rate = random.uniform(6,9)
+        spending_rate = random.uniform(3,6)
         monthly_expenditure = monthly_income/spending_rate
         account_total = total_income*(1.0-poor_status)
         rcs = (monthly_income-monthly_expenditure)/monthly_income
