@@ -1,5 +1,10 @@
 import random
 import json
+import fileinput
+import sys
+
+
+
 
 
 data = 0
@@ -9,6 +14,7 @@ with open('./training_data/data.txt') as json_data:
 targets = 0
 with open('./training_data/targets.txt') as json_data:
     targets = json.load(json_data)
+
 
 #0 rated people
 def saver_big_months(num):
@@ -90,7 +96,29 @@ def average_months(num):
 
     return yearly_income
 
-print("save and big spender")
+def main():
+    input0 = sys.argv[1]
+    input1 = int(input0)
+    if input1 == 0:
+        startNum = random.randint(0,1000)
+        indexNum = targets.index(2,startNum)
+        return saver_big_months(indexNum)
+    elif input1 == 1:
+        startNum = random.randint(0,1000)
+        indexNum = targets.index(1,startNum)
+        return saver_small_months(indexNum)
+    elif input1 == 2:
+        startNum = random.randint(0,1000)
+        indexNum = targets.index(0,startNum)
+        return poor_big_months(indexNum)
+    else:
+        startNum = random.randint(0,1000)
+        indexNum = targets.index(3,startNum)
+        return average_months(indexNum)
+
+
+main()
+"""print("save and big spender")
 firstzero = targets.index(2)
 secondzero = targets.index(2,firstzero+1)
 print(firstzero)
@@ -111,4 +139,4 @@ print("average spender")
 firstthree = targets.index(3)
 secondthree = targets.index(3,firstthree+1)
 print(average_months(firstthree))
-print(average_months(secondthree))
+print(average_months(secondthree))"""
