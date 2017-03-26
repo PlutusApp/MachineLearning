@@ -70,7 +70,7 @@ def main():
                     return;
                 else:
                     sentence = "The cost and quality is not in good proposition. The suggestion is to look for other products or save for later and better use."
-                    result = [sentence , "bad-buy"]
+                    result = [sentence , "bad-buy" , "not_interested"]
                     print(result);
                     return;
         else:
