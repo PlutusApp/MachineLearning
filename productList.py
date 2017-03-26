@@ -4,15 +4,15 @@ import sys
 def main():
     #users = sys.argv[2];
     """users = [[0,100,2],[23,120,56],[35,90,10],[11,50,150],[33,140,4],[45,115,15],[67,80,10],[56,87,43],[87,95,40],[12,125,21]]"""
-    MI = users[3];
-    userinfo = users[2];
+    MI = argv[3];
+    userinfo = argv[2];
     users = argv[4];
 
     """for a in range(0,2):
     users.remove(users[0])
     MI = 10000
     userinfo = 2"""
-    print(users)
+    """print(users)"""
     """users = {
         'user1' : [0,100,2],
         'user2' : [23,120,56],
