@@ -1,18 +1,22 @@
 import numpy
 import sys
+import json
+import ast
 
 def main():
     #users = sys.argv[2];
-    """users = [[0,100,2],[23,120,56],[35,90,10],[11,50,150],[33,140,4],[45,115,15],[67,80,10],[56,87,43],[87,95,40],[12,125,21]]"""
-    MI = argv[3];
+    json_data = "[[0,100,2],[23,120,56],[35,90,10],[11,50,150],[33,140,4],[45,115,15],[67,80,10],[56,87,43],[87,95,40],[12,125,21]]"
+    #users = json_data.split(' , ')
+    users = eval(json_data)
+    """MI = argv[3];
     userinfo = argv[2];
-    users = argv[4];
+    users = argv[4];"""
 
-    """for a in range(0,2):
-    users.remove(users[0])
+    """"for a in range(0,2):
+    users.remove(users[0])"""
     MI = 10000
-    userinfo = 2"""
-    """print(users)"""
+    userinfo = 2
+    print(users)
     """users = {
         'user1' : [0,100,2],
         'user2' : [23,120,56],
