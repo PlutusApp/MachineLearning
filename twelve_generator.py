@@ -1,6 +1,5 @@
 import random
 import json
-import fileinput
 import sys
 
 
@@ -32,7 +31,8 @@ def saver_big_months(num):
     for i in range (0,11):
         monthly_income = MI + (random.randint(-1,1) * (MI/100))
         monthly_expenditure = (random.randint(7,9)*0.1) * monthly_income
-        yearly_income.append([monthly_income,monthly_expenditure]);
+        TI += ( monthly_income - ((random.randint(3,45)*0.01) * monthly_income)) - monthly_expenditure
+        yearly_income.append([monthly_income,monthly_expenditure,TI]);
 
     return yearly_income
 
@@ -52,7 +52,8 @@ def saver_small_months(num):
     for i in range (0,11):
         monthly_income = MI + (random.randint(-1,1) * (MI/100))
         monthly_expenditure = (random.randint(1,3)*0.1) * monthly_income
-        yearly_income.append([monthly_income,monthly_expenditure]);
+        TI += ( monthly_income - ((random.randint(3,8)*0.01) * monthly_income)) - monthly_expenditure
+        yearly_income.append([monthly_income,monthly_expenditure,TI]);
 
     return yearly_income
 
@@ -72,7 +73,8 @@ def poor_big_months(num):
     for i in range (0,11):
         monthly_income = MI + (random.randint(-1,1) * (MI/100))
         monthly_expenditure = (random.randint(8,11)*0.1) * monthly_income
-        yearly_income.append([monthly_income,monthly_expenditure]);
+        TI += ( monthly_income - ((random.randint(50,70)*0.01) * monthly_income)) - monthly_expenditure
+        yearly_income.append([monthly_income,monthly_expenditure,TI]);
 
     return yearly_income
 
@@ -92,7 +94,8 @@ def average_months(num):
     for i in range (0,11):
         monthly_income = MI + (random.randint(-1,1) * (MI/100))
         monthly_expenditure = (random.randint(4,7)*0.1) * monthly_income
-        yearly_income.append([monthly_income,monthly_expenditure]);
+        TI += ( monthly_income - ((random.randint(15,35)*0.01) * monthly_income)) - monthly_expenditure
+        yearly_income.append([monthly_income,monthly_expenditure,TI]);
 
     return yearly_income
 
@@ -102,19 +105,19 @@ def main():
     if input1 == 0:
         startNum = random.randint(0,1000)
         indexNum = targets.index(2,startNum)
-        return saver_big_months(indexNum)
+        print(saver_big_months(indexNum))
     elif input1 == 1:
         startNum = random.randint(0,1000)
         indexNum = targets.index(1,startNum)
-        return saver_small_months(indexNum)
+        print(saver_small_months(indexNum))
     elif input1 == 2:
         startNum = random.randint(0,1000)
         indexNum = targets.index(0,startNum)
-        return poor_big_months(indexNum)
+        print(poor_big_months(indexNum))
     else:
         startNum = random.randint(0,1000)
         indexNum = targets.index(3,startNum)
-        return average_months(indexNum)
+        print(average_months(indexNum))
 
 
 main()
