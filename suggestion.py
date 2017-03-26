@@ -3,17 +3,17 @@ import sys
 usertype0 = sys.argv[1]
 usertype = int(usertype0)
 price0 = sys.argv[2]
-price = int(price0)
+price = float(price0)
 MI0 = sys.argv[3]
-MI = int(MI0)
+MI = float(MI0)
 rating0 = sys.argv[4]
-rating = int(rating0)
+rating = float(rating0)
 
 
 def main():
         if usertype == 0 or usertype == 2:
-            if (price <= 0.1*MI):
-                if (rating <= 1):
+            if (rating <= 1):
+                if (price <= 0.1*MI):
                     sentence = "This is a product of fair price and good quality which is suitable for your saving habit."
                     result = [sentence , "good-buy" , "done"]
                     print(result);
@@ -23,8 +23,8 @@ def main():
                     result = [sentence , "good-buy" , "done"]
                     print(result);
                     return;
-            elif price > 0.1*MI and price < 0.4*MI:
-                if rating >= 2:
+            elif rating > 1 and rating <= 2:
+                if price > 0.1*MI and price < 0.4*MI:
                     sentence = "The item is not fully encouraged to buy. The suggestion is to look for other products or save for later and better use."
                     result = [sentence , "average-buy" , "warning"]
                     print(result);
@@ -40,8 +40,8 @@ def main():
                 print(result);
                 return;
         elif usertype == 1:
-            if (price < 0.3*MI):
-                if (rating <= 2):
+            if (rating <= 2):
+                if (price < 0.3*MI):
                     sentence = "This is a product of fair price and good quality which is suitable for your saving habit."
                     result = [sentence , "good-buy" , "done"]
                     print(result);
@@ -51,8 +51,8 @@ def main():
                     result = [sentence , "good-buy" , "done"]
                     print(result);
                     return;
-            elif price >= 0.3*MI and price <= 0.6*MI:
-                if rating >= 2:
+            elif rating >= 2 and rating <=3:
+                if price >= 0.3*MI and price <= 0.6*MI:
                     sentence = "The item is not fully encouraged to buy. The suggestion is to look for other products or save for later and better use."
                     result = [sentence , "average-buy" , "warning"]
                     print(result);
@@ -63,7 +63,7 @@ def main():
                     print(result);
                     return;
             else:
-                if rating == 0:
+                if price < 0.6*MI:
                     sentence = "If this is a good investment for you, think deeply about it."
                     result = [sentence , "bad-buy" , "not_interested"]
                     print(result);
@@ -74,8 +74,8 @@ def main():
                     print(result);
                     return;
         else:
-            if price <= 0.2*MI:
-                if rating <=2:
+            if rating <2:
+                if price <= 0.2*MI:
                     sentence = "This is a product of fair price and good quality which is suitable for your saving habit."
                     result = [sentence , "good-buy" , "done"]
                     print(result);
@@ -85,8 +85,8 @@ def main():
                     result = [sentence , "good-buy" , "done"]
                     print(result);
                     return;
-            elif price > 0.2*MI and price <= 0.6*MI:
-                if rating >= 2:
+            elif rating >= 2 and rating < 3:
+                if price > 0.2*MI and price <= 0.6*MI:
                     sentence = "The item is not fully encouraged to buy. The suggestion is to look for other products or save for later and better use."
                     result = [sentence , "average-buy" , "warning"]
                     print(result);
