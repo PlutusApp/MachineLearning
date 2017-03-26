@@ -12,11 +12,18 @@ def main():
     userinfo = argv[2];
     users = argv[4];"""
 
+    MI0 = sys.argv[2]
+    MI = float(MI)
+    userinfo0 = sys.argv[1]
+    userinfo = float(userinfo0)
+    j_data = sys.argv[3]
+    users = eval(j_data)
+
     """"for a in range(0,2):
-    users.remove(users[0])"""
+    users.remove(users[0])
     MI = 10000
     userinfo = 2
-    print(users)
+    print(users)"""
     """users = {
         'user1' : [0,100,2],
         'user2' : [23,120,56],
